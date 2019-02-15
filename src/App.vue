@@ -1,18 +1,18 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png">
-    <HelloWorld/>
-    <!--Todo list app-->
+    <img width="25%" src="./assets/logo.png" /> <HelloWorld />
+    <!-- Todo list app -->
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld";
-
+import Test from "./components/test";
 export default {
   name: "App",
   components: {
-    HelloWorld
+    HelloWorld,
+    Users
   }
 };
 </script>
