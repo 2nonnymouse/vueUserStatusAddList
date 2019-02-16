@@ -1,7 +1,13 @@
 <template>
   <div class="users">
-    <h1>hello user</h1>
-    <form v-on:submit="addUser"><input type="text" /></form>
+    <h1>Users</h1>
+    <form v-on:submit="addUser">
+      <input type="text" v-model="newUser.name" placeholder="Enter Name" />
+      <br />
+      <input type="text" v-model="newUser.email" placeholder="Enter Email" />
+      <br />
+      <input type="submit" value="submit" />
+    </form>
     <ul>
       <li v-for="user in users">{{ user.name }}: {{ user.email }}</li>
     </ul>
@@ -12,6 +18,7 @@ export default {
   name: "users",
   data() {
     return {
+      newUser: {},
       users: [
         {
           name: "John Doe",
@@ -31,7 +38,11 @@ export default {
       ]
     };
   },
-  methods: {}
+  methods: {
+    addUser: function() {
+      console.log("add");
+    }
+  }
 };
 </script>
 
