@@ -1,6 +1,7 @@
 <template>
   <div class="users">
     <h1>hello user</h1>
+    <form v-on:submit="addUser"><input type="text" /></form>
     <ul>
       <li v-for="user in users">{{ user.name }}: {{ user.email }}</li>
     </ul>
