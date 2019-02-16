@@ -9,7 +9,12 @@
       <input type="submit" value="submit" />
     </form>
     <ul>
-      <li v-for="user in users">{{ user.name }}: {{ user.email }}</li>
+      <li v-for="user in users">
+        <input type="checkbox" class="toggle" v-model="user.contacted" />
+        <span :class="{ contacted: user.contacted }">
+          {{ user.name }}: {{ user.email }}
+        </span>
+      </li>
     </ul>
   </div>
 </template>
@@ -39,11 +44,21 @@ export default {
     };
   },
   methods: {
-    addUser: function() {
-      console.log("add");
+    addUser: function(e) {
+      //console.log("add");
+      this.user.push({
+        name: this.newUser.name,
+        email: this.newUser.email,
+        contacted: false
+      });
+      e.preventDefault();
     }
   }
 };
 </script>
-
-<style scoped></style>
+}
+<style scoped>
+.contacted {
+  text-decoration: line-through;
+}
+</style>
