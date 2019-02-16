@@ -26,7 +26,8 @@ export default {
     return {
       newUser: {},
       users: [
-        {
+        //test case
+        /* {
           name: "John Doe",
           email: "jd@mail.com",
           contacred: false
@@ -40,7 +41,7 @@ export default {
           name: "ay oe",
           email: "ds@mail.com",
           contacred: false
-        }
+        }*/
       ]
     };
   },
@@ -54,9 +55,18 @@ export default {
       });
       e.preventDefault();
     },
-    deleteUser: function() {
-      this.user.splice(this.users.indexOf(user), 1);
+    deleteUser: function(user) {
+      this.users.splice(this.users.indexOf(user), 1);
     }
+  },
+  created: function() {
+    //console.log("created ran..");
+    this.$http
+      .get("https://jsonplaceholder.typicode.com/users")
+      .then(function(response) {
+        this.users = response.data;
+        //console.log(response.data);
+      });
   }
 };
 </script>

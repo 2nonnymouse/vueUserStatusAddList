@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img width="25%" src="./assets/logo.png" /> <HelloWorld />
+    <img width="25%" src="./assets/logo.png" />
     <!-- Todo list app -->
     <Users />
   </div>
