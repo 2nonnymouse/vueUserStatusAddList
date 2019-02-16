@@ -2,16 +2,15 @@
   <div id="app">
     <img width="25%" src="./assets/logo.png" /> <HelloWorld />
     <!-- Todo list app -->
+    <Users />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
-import Test from "./components/test";
+import Users from "./components/Users";
 export default {
   name: "App",
   components: {
-    HelloWorld,
     Users
   }
 };
